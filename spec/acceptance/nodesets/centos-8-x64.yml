@@ -1,0 +1,11 @@
+HOSTS:
+  rocky-8-x64:
+    roles:
+      - master
+    platform: el-8-x86_64
+    box: rockylinux/8
+    box_url: https://app.vagrantup.com/rockylinux/boxes/8
+    hypervisor: vagrant
+CONFIG:
+  log_level: verbose
+  type: foss

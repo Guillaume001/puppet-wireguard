@@ -20,7 +20,7 @@ class wireguard::install (
 
   if $manage_repo {
     case $facts['os']['name'] {
-      'RedHat', 'CentOS': {
+      'RedHat', 'CentOS', 'Rocky': {
         exec {'download_wireguard_repo':
           command => "/usr/bin/curl -Lo /etc/yum.repos.d/wireguard.repo ${repo_url}",
           creates => '/etc/yum.repos.d/wireguard.repo',
@@ -48,7 +48,7 @@ class wireguard::install (
   }
 
   case $facts['os']['name'] {
-    'RedHat', 'CentOS': {
+    'RedHat', 'CentOS', 'Rocky': {
       $_require = $manage_repo ? {
         true    => Exec['download_wireguard_repo'],
         default => undef,
