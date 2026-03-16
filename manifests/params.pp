@@ -8,7 +8,7 @@ class wireguard::params {
   case $facts['os']['name'] {
     'RedHat', 'CentOS', 'VirtuozzoLinux', 'Rocky': {
       case $facts['os']['release']['major'] {
-        '9': {
+        '9', '10': {
           $manage_repo  = false
           $package_name = ['wireguard-tools']
           $repo_url     = ''
