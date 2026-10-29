@@ -6,7 +6,7 @@ class wireguard::params {
   $manage_package     = true
   $config_dir         = '/etc/wireguard'
   case $facts['os']['name'] {
-    'RedHat', 'CentOS', 'VirtuozzoLinux', 'Rocky': {
+    'RedHat', 'CentOS', 'VirtuozzoLinux', 'Rocky', 'AlmaLinux': {
       case $facts['os']['release']['major'] {
         '9', '10': {
           $manage_repo  = false
